@@ -11,6 +11,7 @@ export class Process {
         this.#onReject = onReject;
     }
     createTask(func, delay) {
+        func(this);
         this.#proceses.push(
             setInterval(() => func(this), delay)
         );
